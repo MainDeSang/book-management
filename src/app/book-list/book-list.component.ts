@@ -18,8 +18,8 @@ export class BookListComponent {
     this.books$ = store.select('book');
   }
 
-  addBook(book: Book) {
-    this.store.dispatch(AddBook(book));
+  addBook(id: string, title: string, author: string) {
+    this.store.dispatch(AddBook({ id, title, author }));
   }
 
   removeBook(bookId: string) {
