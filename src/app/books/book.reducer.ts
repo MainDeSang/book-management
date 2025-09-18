@@ -3,7 +3,7 @@ import { Book } from "../models/book";
 import { AddBook, RemoveBook } from "./book.actions";
 
 // initial state
-export const initialState: ReadonlyArray<Book> = [];
+export const initialState: Book[] = [];
 
 // reducer function
 // handles adding and removing books

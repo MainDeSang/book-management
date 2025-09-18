@@ -1,3 +1,4 @@
+import { AppState } from './../app.state';
 import { Component } from '@angular/core';
 import { Book } from '../models/book';
 import { Store } from '@ngrx/store';
@@ -13,8 +14,8 @@ export class BookListComponent {
 
   books$: Observable<Book[]>;
 
-  constructor(private store: Store<{ books: Book[] }>) {
-    this.books$ = store.select('books');
+  constructor(private store: Store<AppState>) {
+    this.books$ = store.select('book');
   }
 
   addBook(book: Book) {
