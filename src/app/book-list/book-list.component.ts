@@ -1,0 +1,28 @@
+import { Component } from '@angular/core';
+import { Book } from '../models/book';
+import { Store } from '@ngrx/store';
+import { AddBook, RemoveBook } from '../books/book.actions';
+import { Observable } from 'rxjs';
+
+@Component({
+  selector: 'app-book-list',
+  templateUrl: './book-list.component.html',
+  styleUrls: ['./book-list.component.css']
+})
+export class BookListComponent {
+
+  books$: Observable<Book[]>;
+
+  constructor(private store: Store<{ books: Book[] }>) {
+    this.books$ = store.select('books');
+  }
+
+  addBook(book: Book) {
+    this.store.dispatch(AddBook(book));
+  }
+
+  removeBook(bookId: string) {
+    this.store.dispatch(RemoveBook({ bookId }));
+  }
+
+}
