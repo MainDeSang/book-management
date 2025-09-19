@@ -24,6 +24,7 @@ export class BookListComponent {
 
   removeBook(bookId: string) {
     this.store.dispatch(RemoveBook({ bookId }));
+    
   }
 
 }

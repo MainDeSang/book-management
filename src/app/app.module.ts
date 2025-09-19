@@ -20,7 +20,8 @@ import { StoreDevtoolsModule} from '@ngrx/store-devtools';
     AppRoutingModule,
     StoreModule.forRoot<AppState>({ book: BookReducer }),
     EffectsModule.forRoot([BookEffects]),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument({ logOnly: true }),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
